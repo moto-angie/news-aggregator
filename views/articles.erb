@@ -6,8 +6,19 @@
 
   <body>
     <h2>All Articles</h2>
-    <%= @articles %>
+
+    <% @articles.each do |article| %>
+    <h3><%= "#{article[0]}" %></h3>
+    <p>
+    <%= "#{article[2]}" %>
     <br>
-    <a href="/articles/new">Submit a New Article</a>
+    <i>URL: <a href="<%= article[1] %>"target="_blank"><%= "#{article[1]}" %></a></i>
+    <br>
+    <% end %>
+  </p>
+    <br>
   </body>
+  <footer>
+    <a href="/articles/new">Submit a New Article</a>
+  </footer>
 </html>
